@@ -70,6 +70,18 @@ class FirebaseApi {
       .set(value);
 
   }
+
+  static getMessagesUpdate(path, callback) {
+    let messageRef = firebase.database().ref(path);
+    messageRef.limitToLast(10).on('child_changed', callback);
+  }
+
+
+  static getLastMessage(path, amountOfMessage, callback) {
+    let messageRef = firebase.database().ref(path);
+    messageRef.limitToLast(amountOfMessage).on('value', callback);
+  }
+
 }
 
 export default FirebaseApi;
