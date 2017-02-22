@@ -6,3 +6,4 @@ export const firebaseConfig = {
   databaseURL: "https://react-hot-redux-firebase-start.firebaseio.com",
   storageBucket: "react-hot-redux-firebase-start.appspot.com"
 };
+
