@@ -1,6 +1,7 @@
 import React from 'react';
 import ChatRoom from '../../containers/ChatRoom';
 import MessageInput from '../../containers/MessageInput';
+import ChatChannels from '../../containers/ChatChannels';
 
 
 const ChatPage = () => {
@@ -26,7 +27,13 @@ const ChatPage = () => {
               <span className="glyphicon glyphicon-comment"></span> Messages
             </div>
             <div className="panel-body">
-              <ChatRoom/>
+              <div className="col-lg-3 col-md-3 col-sm-3">
+                <MessageInput/>
+                <ChatChannels/>
+              </div>
+              <div className="col-lg-9 col-md-9 col-sm-9">
+                <ChatRoom/>
+              </div>
             </div>
             <div className="panel-footer">
               <MessageInput/>

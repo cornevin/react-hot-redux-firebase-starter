@@ -17,9 +17,9 @@ function extractUserProperties(firebaseUser) {
     'providerId',
     'refreshToken',
     'uid',
-    'isAdmin'
+    'isAdmin',
+    'connectedChannels'
   ];
-
   userProperties.map((prop) => {
     if (prop in firebaseUser) {
       user[prop] = firebaseUser[prop];

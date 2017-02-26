@@ -1,15 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {sendMessage} from '../actions/messageActions';
+import {createChannel} from '../actions/channelActions';
 import TextInput from '../components/chat/TextInput';
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (input, user) => {
-      dispatch(sendMessage({
-        message: input.value,
-        userEmail: user.email,
+      dispatch(createChannel({
+        channelName: input.value,
         userUid: user.uid
       }));
     }
@@ -20,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    placeholder: "Enter message ..."
+    placeholder: "Create a channel"
   };
 };
 
