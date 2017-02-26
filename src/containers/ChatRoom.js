@@ -6,6 +6,7 @@ import { connectToChannel } from '../actions/messageActions';
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
+    user: state.user,
     messages: state.messages
   };
 };
@@ -17,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(connectToChannel())
     }
   }
-}
+};
 
 const ChatRoom = connect(
   mapStateToProps,
